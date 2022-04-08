@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<button type="button" class="btn btn-primary">Normal</button>"
+    <title>Todo List</title>
+
+</head>
+<body>
+    <h2>Todo List</h2>
+    <form>
+      
+    <input type="text" id="textImport" placeholder="enter todo list"/>
+    <button id="Enter">Enter</button>
+    </form>   
+     <ul id="todolists">
+
+     </ul>
+<script>
+    let arrayTodoList = [];
+    function createTodoItem(item){
+    let li = document.createElement('li');
+    li.textContent=item;
+    return li
+}
+
+    document.getElementById("Enter").addEventListener('click', (e) =>{
+   let item = document.getElementById("textImport").value;
+   arrayTodoList.push(item);
+   let todoList =document.querySelector('#todolists');
+   todoList.appendChild(createTodoItem(item));
+   e.preventDefault();
+
+    });
+
+</script>
+    
+</body>
+</html>
